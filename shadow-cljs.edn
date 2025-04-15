@@ -1,0 +1,15 @@
+{:deps {}
+ :dev-http {8080 ["resources/public" "classpath:public"]
+            3001 "out/test"}
+ :builds
+ {:app
+  {:target :browser
+   :modules {:main {:init-fn game-of-life.core/main}}
+   :dev {:output-dir "resources/public/app-js"}}
+
+  :browser-test {:target :browser-test
+                 :test-dir "out/test"}
+  :portfolio
+  {:target :browser
+   :modules {:main {:init-fn game-of-life.scenes/main}}
+   :dev {:output-dir "resources/public/portfolio-js"}}}}
