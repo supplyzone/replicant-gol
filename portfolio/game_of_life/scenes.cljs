@@ -1,7 +1,10 @@
 (ns game-of-life.scenes
   (:require [portfolio.replicant :refer-macros [defscene]]
             [portfolio.ui :as portfolio]
-            [game-of-life.ui :as ui]))
+            [game-of-life.ui :as ui]
+            [replicant.dom :as r]))
+
+(r/set-dispatch! (fn [_ event-data] (prn event-data)))
 
 (defscene empty-cell
   (ui/render-cell {:clickable? true :alive? true}))
